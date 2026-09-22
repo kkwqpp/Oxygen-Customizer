@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Live Alerts (dynamic island) - fork additions, kept in their own file so upstream syncs stay clean -->
+    <string name="live_alerts_title">Live Alerts</string>
+    <string name="live_alerts_summary">Dynamic island capsule look</string>
+
+    <string name="live_alerts_master_title">Customize the capsule</string>
+    <string name="live_alerts_master_summary">Changes apply live. If something looks stuck, restart SystemUI from the menu.</string>
+
+    <string name="live_alerts_category_background">Background</string>
+    <string name="live_alerts_bg_custom_title">Custom background color</string>
+    <string name="live_alerts_bg_custom_summary">Text inside the capsule stays light, so keep the color dark enough to read</string>
+    <string name="live_alerts_bg_color_title">Background color</string>
+    <string name="live_alerts_corner_radius_title">Corner radius</string>
+    <string name="live_alerts_corner_radius_summary">20 dp is the stock pill shape; lower values give squarer corners</string>
+
+    <string name="live_alerts_category_outline">Outline</string>
+    <string name="live_alerts_stroke_mode_title">Outline</string>
+    <string name="live_alerts_stroke_width_title">Outline width</string>
+    <string name="live_alerts_stroke_color_title">Outline color</string>
+
+    <string name="live_alerts_category_size">Size and position</string>
+    <string name="live_alerts_max_width_custom_title">Custom maximum width</string>
+    <string name="live_alerts_max_width_custom_summary">Stock limit is 202 dp; wider gives long text more room</string>
+    <string name="live_alerts_max_width_title">Maximum width</string>
+    <string name="live_alerts_offset_x_title">Horizontal offset</string>
+    <string name="live_alerts_offset_y_title">Vertical offset</string>
+    <string name="live_alerts_offset_summary">Experimental. Status bar only; the expand animation still starts from the camera</string>
+
+    <string name="live_alerts_category_moons">Edge crescents</string>
+    <string name="live_alerts_moon_mode_title">Crescents beside the capsule</string>
+    <string name="live_alerts_moon_color_title">Crescent color</string>
+
+    <string name="live_alerts_category_more">More</string>
+
+    <string name="live_alerts_mode_default">System default</string>
+    <string name="live_alerts_mode_hidden">Hidden</string>
+    <string name="live_alerts_mode_custom">Custom</string>
+
+    <string-array name="live_alerts_mode_entries">
+        <item>@string/live_alerts_mode_default</item>
+        <item>@string/live_alerts_mode_hidden</item>
+        <item>@string/live_alerts_mode_custom</item>
+    </string-array>
+
+    <string-array name="live_alerts_mode_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>
