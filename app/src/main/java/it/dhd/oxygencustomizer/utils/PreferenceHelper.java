@@ -1105,6 +1105,14 @@ public class PreferenceHelper {
                 return Integer.parseInt(instance.mPreferences.getString("pulse_color_mode", "2")) == 2;
             }
 
+            // Live Alerts capsule (fork)
+            case LiveAlertPrefs.LA_STROKE_WIDTH, LiveAlertPrefs.LA_STROKE_COLOR -> {
+                return Integer.parseInt(instance.mPreferences.getString(LiveAlertPrefs.LA_STROKE_MODE, "0")) == LiveAlertPrefs.MODE_CUSTOM;
+            }
+            case LiveAlertPrefs.LA_MOON_COLOR -> {
+                return Integer.parseInt(instance.mPreferences.getString(LiveAlertPrefs.LA_MOON_MODE, "0")) == LiveAlertPrefs.MODE_CUSTOM;
+            }
+
             // Fluid Music
             case "fluid_settings" -> {
                 return doesClassExist(SYSTEM_UI,
