@@ -43,6 +43,7 @@ import it.dhd.oxygencustomizer.ui.fragments.UpdateFragment;
 import it.dhd.oxygencustomizer.ui.fragments.UserInterface;
 import it.dhd.oxygencustomizer.ui.fragments.mods.Buttons;
 import it.dhd.oxygencustomizer.ui.fragments.mods.launcher.Launcher;
+import it.dhd.oxygencustomizer.ui.fragments.mods.LiveAlerts;
 import it.dhd.oxygencustomizer.ui.fragments.mods.Statusbar;
 import it.dhd.oxygencustomizer.ui.fragments.mods.WeatherSettings;
 import it.dhd.oxygencustomizer.ui.fragments.mods.aod.AodClock;
@@ -136,6 +137,7 @@ public class MainActivity extends BaseActivity implements PreferenceFragmentComp
         prefsList.add(new SearchPreferenceItem(R.xml.battery_bar_settings, R.string.statusbar_batterybar_title, new Statusbar.BatteryBar()));
         prefsList.add(new SearchPreferenceItem(R.xml.statusbar_battery_icon, R.string.statusbar_battery_icon_options, new Statusbar.BatteryIcon()));
         prefsList.add(new SearchPreferenceItem(R.xml.statusbar_icons, R.string.statusbar_icons, new Statusbar.Icons()));
+        prefsList.add(new SearchPreferenceItem(R.xml.live_alerts_prefs, R.string.live_alerts_title, new LiveAlerts()));
         prefsList.add(new SearchPreferenceItem(R.xml.quick_settings_mods, R.string.quick_settings_title, new QuickSettings()));
         prefsList.add(new SearchPreferenceItem(R.xml.quick_settings_tiles_prefs, R.string.quick_settings_tiles_title, new QuickSettingsTiles()));
         prefsList.add(new SearchPreferenceItem(R.xml.quick_settings_tiles_customizations_prefs, R.string.quick_settings_tiles_customization_title, new QuickSettingsCustomization()));
