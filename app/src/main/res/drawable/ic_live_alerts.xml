@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Pill-shaped capsule with a camera dot, matching the 1.5-stroke style of the other mod icons -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="?colorPrimary"
+        android:pathData="M17,17.75H7C3.83,17.75 1.25,15.17 1.25,12C1.25,8.83 3.83,6.25 7,6.25H17C20.17,6.25 22.75,8.83 22.75,12C22.75,15.17 20.17,17.75 17,17.75ZM7,7.75C4.66,7.75 2.75,9.66 2.75,12C2.75,14.34 4.66,16.25 7,16.25H17C19.34,16.25 21.25,14.34 21.25,12C21.25,9.66 19.34,7.75 17,7.75H7Z" />
+    <path
+        android:fillColor="?colorPrimary"
+        android:pathData="M12,13.75C11.03,13.75 10.25,12.97 10.25,12C10.25,11.03 11.03,10.25 12,10.25C12.97,10.25 13.75,11.03 13.75,12C13.75,12.97 12.97,13.75 12,13.75Z" />
+    <path
+        android:fillColor="?colorPrimary"
+        android:pathData="M7.5,12.75C7.09,12.75 6.75,12.41 6.75,12C6.75,11.59 7.09,11.25 7.5,11.25H8C8.41,11.25 8.75,11.59 8.75,12C8.75,12.41 8.41,12.75 8,12.75H7.5Z" />
+    <path
+        android:fillColor="?colorPrimary"
+        android:pathData="M16.5,12.75H16C15.59,12.75 15.25,12.41 15.25,12C15.25,11.59 15.59,11.25 16,11.25H16.5C16.91,11.25 17.25,11.59 17.25,12C17.25,12.41 16.91,12.75 16.5,12.75Z" />
+</vector>
