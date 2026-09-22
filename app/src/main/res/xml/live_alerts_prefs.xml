@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <it.dhd.oneplusui.preference.OplusPreferenceCategory
+        app:iconSpaceReserved="false">
+
+        <it.dhd.oneplusui.preference.OplusSwitchPreference
+            android:defaultValue="false"
+            android:key="live_alert_capsule_custom"
+            android:summary="@string/live_alerts_master_summary"
+            android:title="@string/live_alerts_master_title"
+            app:iconSpaceReserved="false" />
+
+    </it.dhd.oneplusui.preference.OplusPreferenceCategory>
+
+    <!-- Background -->
+    <it.dhd.oneplusui.preference.OplusPreferenceCategory
+        android:title="@string/live_alerts_category_background"
+        app:iconSpaceReserved="false">
+
+        <it.dhd.oneplusui.preference.OplusSwitchPreference
+            android:defaultValue="false"
+            android:dependency="live_alert_capsule_custom"
+            android:key="live_alert_bg_custom"
+            android:summary="@string/live_alerts_bg_custom_summary"
+            android:title="@string/live_alerts_bg_custom_title"
+            app:iconSpaceReserved="false" />
+
+        <it.dhd.oxygencustomizer.ui.preferences.OplusColorPreference
+            android:defaultValue="0xff000000"
+            android:dependency="live_alert_bg_custom"
+            android:key="live_alert_bg_color"
+            android:title="@string/live_alerts_bg_color_title"
+            app:cpv_showAlphaSlider="true"
+            app:iconSpaceReserved="false" />
+
+        <it.dhd.oneplusui.preference.OplusSliderPreference
+            android:dependency="live_alert_capsule_custom"
+            android:key="live_alert_corner_radius"
+            android:summary="@string/live_alerts_corner_radius_summary"
+            android:title="@string/live_alerts_corner_radius_title"
+            app:defaultValue="20"
+            app:iconSpaceReserved="false"
+            app:maxVal="20"
+            app:minVal="0"
+            app:updatesContinuously="true"
+            app:valueFormat="dp" />
+
+    </it.dhd.oneplusui.preference.OplusPreferenceCategory>
+
+    <!-- Outline -->
+    <it.dhd.oneplusui.preference.OplusPreferenceCategory
+        android:title="@string/live_alerts_category_outline"
+        app:iconSpaceReserved="false">
+
+        <it.dhd.oneplusui.preference.OplusMenuPreference
+            android:defaultValue="0"
+            android:dependency="live_alert_capsule_custom"
+            android:entries="@array/live_alerts_mode_entries"
+            android:entryValues="@array/live_alerts_mode_values"
+            android:key="live_alert_stroke_mode"
+            android:title="@string/live_alerts_stroke_mode_title"
+            app:iconSpaceReserved="false"
+            app:useSimpleSummaryProvider="true" />
+
+        <it.dhd.oneplusui.preference.OplusSliderPreference
+            android:dependency="live_alert_capsule_custom"
+            android:key="live_alert_stroke_width"
+            android:title="@string/live_alerts_stroke_width_title"
+            app:defaultValue="1"
+            app:iconSpaceReserved="false"
+            app:maxVal="6"
+            app:minVal="1"
+            app:updatesContinuously="true"
+            app:valueFormat="dp" />
+
+        <it.dhd.oxygencustomizer.ui.preferences.OplusColorPreference
+            android:defaultValue="0x40959595"
+            android:dependency="live_alert_capsule_custom"
+            android:key="live_alert_stroke_color"
+            android:title="@string/live_alerts_stroke_color_title"
+            app:cpv_showAlphaSlider="true"
+            app:iconSpaceReserved="false" />
+
+    </it.dhd.oneplusui.preference.OplusPreferenceCategory>
+
+    <!-- Size and position -->
+    <it.dhd.oneplusui.preference.OplusPreferenceCategory
+        android:title="@string/live_alerts_category_size"
+        app:iconSpaceReserved="false">
+
+        <it.dhd.oneplusui.preference.OplusSwitchPreference
+            android:defaultValue="false"
+            android:dependency="live_alert_capsule_custom"
+            android:key="live_alert_max_width_custom"
+            android:summary="@string/live_alerts_max_width_custom_summary"
+            android:title="@string/live_alerts_max_width_custom_title"
+            app:iconSpaceReserved="false" />
+
+        <it.dhd.oneplusui.preference.OplusSliderPreference
+            android:dependency="live_alert_max_width_custom"
+            android:key="live_alert_max_width"
+            android:title="@string/live_alerts_max_width_title"
+            app:defaultValue="202"
+            app:iconSpaceReserved="false"
+            app:maxVal="360"
+            app:minVal="120"
+            app:updatesContinuously="true"
+            app:valueFormat="dp" />
+
+        <it.dhd.oneplusui.preference.OplusSliderPreference
+            android:dependency="live_alert_capsule_custom"
+            android:key="live_alert_offset_x"
+            android:summary="@string/live_alerts_offset_summary"
+            android:title="@string/live_alerts_offset_x_title"
+            app:defaultValue="0"
+            app:iconSpaceReserved="false"
+            app:maxVal="60"
+            app:minVal="-60"
+            app:showSeekBarValue="true"
+            app:updatesContinuously="true"
+            app:valueFormat="dp" />
+
+        <it.dhd.oneplusui.preference.OplusSliderPreference
+            android:dependency="live_alert_capsule_custom"
+            android:key="live_alert_offset_y"
+            android:summary="@string/live_alerts_offset_summary"
+            android:title="@string/live_alerts_offset_y_title"
+            app:defaultValue="0"
+            app:iconSpaceReserved="false"
+            app:maxVal="10"
+            app:minVal="-10"
+            app:showSeekBarValue="true"
+            app:updatesContinuously="true"
+            app:valueFormat="dp" />
+
+    </it.dhd.oneplusui.preference.OplusPreferenceCategory>
+
+    <!-- Edge crescents -->
+    <it.dhd.oneplusui.preference.OplusPreferenceCategory
+        android:title="@string/live_alerts_category_moons"
+        app:iconSpaceReserved="false">
+
+        <it.dhd.oneplusui.preference.OplusMenuPreference
+            android:defaultValue="0"
+            android:dependency="live_alert_capsule_custom"
+            android:entries="@array/live_alerts_mode_entries"
+            android:entryValues="@array/live_alerts_mode_values"
+            android:key="live_alert_moon_mode"
+            android:title="@string/live_alerts_moon_mode_title"
+            app:iconSpaceReserved="false"
+            app:useSimpleSummaryProvider="true" />
+
+        <it.dhd.oxygencustomizer.ui.preferences.OplusColorPreference
+            android:defaultValue="0xff141414"
+            android:dependency="live_alert_capsule_custom"
+            android:key="live_alert_moon_color"
+            android:title="@string/live_alerts_moon_color_title"
+            app:cpv_showAlphaSlider="true"
+            app:iconSpaceReserved="false" />
+
+    </it.dhd.oneplusui.preference.OplusPreferenceCategory>
+
+    <!-- More -->
+    <it.dhd.oneplusui.preference.OplusPreferenceCategory
+        android:title="@string/live_alerts_category_more"
+        app:iconSpaceReserved="false">
+
+        <it.dhd.oneplusui.preference.OplusJumpPreference
+            android:fragment="it.dhd.oxygencustomizer.ui.fragments.mods.sound.FluidSettings"
+            android:key="fluid_settings"
+            android:summary="@string/fluid_music_summary"
+            android:title="@string/fluid_music"
+            app:iconSpaceReserved="false" />
+
+    </it.dhd.oneplusui.preference.OplusPreferenceCategory>
+
+</PreferenceScreen>

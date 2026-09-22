@@ -19,6 +19,14 @@
             search:ignore="true" />
 
         <it.dhd.oneplusui.preference.OplusJumpPreference
+            android:icon="@drawable/ic_live_alerts"
+            android:key="live_alerts"
+            android:title="@string/live_alerts_title"
+            android:summary="@string/live_alerts_summary"
+            android:fragment="it.dhd.oxygencustomizer.ui.fragments.mods.LiveAlerts"
+            search:ignore="true" />
+
+        <it.dhd.oneplusui.preference.OplusJumpPreference
             android:icon="@drawable/ic_qs"
             android:key="quick_settings"
             android:title="@string/quick_settings_title"
