@@ -30,6 +30,7 @@ import it.dhd.oxygencustomizer.xposed.hooks.systemui.CaffeineTile;
 import it.dhd.oxygencustomizer.xposed.hooks.systemui.ControllersProvider;
 import it.dhd.oxygencustomizer.xposed.hooks.systemui.FeatureOption;
 import it.dhd.oxygencustomizer.xposed.hooks.systemui.FluidMusic;
+import it.dhd.oxygencustomizer.xposed.hooks.systemui.LiveAlertCapsule;
 import it.dhd.oxygencustomizer.xposed.hooks.systemui.MediaPlayerObserver;
 import it.dhd.oxygencustomizer.xposed.hooks.systemui.MiscMods;
 import it.dhd.oxygencustomizer.xposed.hooks.systemui.OpDrawableUtils;
@@ -185,6 +186,9 @@ public class ModPacks {
 
                     // Fluid Music Settings
                     modPacks.add(FluidMusic.class);
+
+                    // Live Alerts (dynamic island) capsule appearance
+                    modPacks.add(LiveAlertCapsule.class);
 
                     modPacks.add(MiscMods.class);
                 }
