@@ -1,0 +1,68 @@
+name: Build Island Fork APK
+
+# Builds the Live Alerts (dynamic island) fork. Upstream's own workflows are
+# gated to DHD2280's repository or need its secrets, so they don't apply here.
+
+on:
+  push:
+    branches: [ "beta" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build debug APK
+    if: github.repository != 'DHD2280/Oxygen-Customizer'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: gradle
+
+      # A stable signing key lets each build install over the previous one.
+      # It is generated on the first run and kept in this repo's Actions cache
+      # (never committed). If the cache is ever evicted (7 days without a build),
+      # a new key is made and the next install needs an uninstall first.
+      - name: Restore signing key
+        id: signing
+        uses: actions/cache@v4
+        with:
+          path: ~/.island-signing
+          key: island-signing-key-v1
+
+      - name: Create signing key (first run only)
+        if: steps.signing.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p ~/.island-signing
+          PASS=$(openssl rand -hex 24)
+          keytool -genkeypair -keystore ~/.island-signing/island.p12 -storetype PKCS12 \
+            -alias island -keyalg RSA -keysize 2048 -validity 10000 \
+            -storepass "$PASS" -keypass "$PASS" -dname "CN=Oxygen Customizer Island Fork"
+          echo "$PASS" > ~/.island-signing/pass
+
+      - name: Signing config
+        run: |
+          PASS=$(cat ~/.island-signing/pass)
+          echo "::add-mask::$PASS"
+          {
+            echo "storeFile=$HOME/.island-signing/island.p12"
+            echo "storePassword=$PASS"
+            echo "keyAlias=island"
+            echo "keyPassword=$PASS"
+          } > keystore.properties
+
+      - name: Build
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug --stacktrace
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: OxygenCustomizer-island-${{ github.run_number }}
+          path: app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
